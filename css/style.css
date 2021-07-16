@@ -1,0 +1,371 @@
+a:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+body {
+  margin-top: 88px;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+  padding: 1rem;
+}
+header .navbar {
+  border-radius: 5px;
+  background: #adadad !important;
+}
+header .navbar-brand {
+  font-weight: bold;
+  color: #006222 !important;
+}
+header .nav-item {
+  margin: auto 0.5rem;
+}
+header .nav-item.active {
+  color: #00c845 !important;
+}
+header .nav-item:hover {
+  color: #00c845 !important;
+  transition: all 0.5s ease;
+}
+/* Welcome Section on home page */
+.welcome > .container-fluid > .row {
+  min-height: calc(100vh - 88px);
+}
+.welcome .welcome-heading {
+  text-align: right;
+}
+.welcome .welcome-heading > span {
+  color: #006222;
+}
+.welcome .welcome-paragraph {
+  text-align: right;
+  font-weight: 300;
+}
+@media screen and (max-width: 768px) {
+  .welcome > .container-fluid > .row > div:last-of-type {
+    position: absolute;
+  }
+  .welcome .welcome-img {
+    opacity: 0.5;
+  }
+  .welcome .welcome-heading,
+.welcome .welcome-paragraph {
+    text-align: center;
+  }
+}
+
+/* Signup Dialog */
+.signup-dialog {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 10px #000;
+  z-index: 2000;
+}
+.signup-dialog.show {
+  display: flex;
+}
+.signup-dialog #close-dialog {
+  font-size: 2rem;
+  color: #fff;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+.signup-dialog #close-dialog:hover {
+  color: #00c845;
+  transition: all 0.5s ease;
+}
+@-webkit-keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.signup-dialog .dialog-container {
+  width: 40%;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  animation: zoomIn 0.75s ease-in-out;
+}
+@media screen and (max-width: 768px) {
+  .signup-dialog .dialog-container {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 576px) {
+  .signup-dialog .dialog-container {
+    width: 80%;
+  }
+}
+.signup-dialog .signup-form {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.signup-dialog .signup-form .form-group {
+  margin-bottom: 1rem;
+}
+.signup-dialog .signup-form .form-group:last-of-type {
+  margin-bottom: 0;
+}
+
+/* Login Dialog */
+.login-dialog {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 10px #000;
+  z-index: 2000;
+}
+.login-dialog.show {
+  display: flex;
+}
+.login-dialog #close-dialog {
+  font-size: 2rem;
+  color: #fff;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+.login-dialog #close-dialog:hover {
+  color: var(--success);
+  transition: all 0.5s ease;
+}
+.login-dialog .dialog-container {
+  width: 40%;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  animation: zoomIn 0.75s ease-in-out;
+}
+@media screen and (max-width: 768px) {
+  .login-dialog .dialog-container {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 576px) {
+  .login-dialog .dialog-container {
+    width: 80%;
+  }
+}
+.login-dialog .login-form {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.login-dialog .login-form .form-group {
+  margin-bottom: 1rem;
+}
+.login-dialog .login-form .form-group:last-of-type {
+  margin-bottom: 0;
+}
+
+/* Explore Actions Section */
+.actions .actions-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.actions .actions-container .filters {
+  width: fit-content;
+  display: inline;
+}
+.actions .actions-container .filters .profession-filter {
+  background: #c8ffdb;
+  border-radius: 0.25rem;
+}
+.actions .actions-container .filters .profession-filter .input-group-prepend {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  align-items: center;
+}
+.actions .actions-container .filters .profession-filter .input-group-prepend i {
+  color: #009533;
+}
+
+/* Explore Section */
+.explore .user-container {
+  height: 100%;
+}
+@media screen and (max-width: 576px) {
+  .explore .user-container {
+    margin-bottom: 2rem;
+  }
+}
+.explore .user-container .card {
+  padding: 0.5rem 0;
+  box-shadow: 0px 0px 5px #d0c7c7;
+}
+.explore .user-container .user-img {
+  border: 5px solid #c8ffdb;
+  border-radius: 50%;
+  width: 50%;
+  height: auto;
+  margin: 1.5rem auto 0;
+}
+.explore .user-container .user-name {
+  display: block;
+  color: #000;
+  text-align: center;
+  font-size: 1.3rem;
+}
+.explore .user-container .user-name:hover {
+  color: #00c845;
+  transition: all 0.5s ease;
+}
+.explore .user-container .user-profession {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #006222;
+  font-weight: 700;
+}
+
+/* Account Page Section */
+.account > .container > .row {
+  min-height: calc(100vh - 88px);
+}
+.account .account-container {
+  background: #f9f9ff;
+  padding: 2rem 1.5rem;
+  border-radius: 10px;
+}
+@media screen and (max-width: 768px) {
+  .account .account-container {
+    border-radius: 0;
+  }
+}
+.account .account-container .account-img {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 768px) {
+  .account .account-container .account-img {
+    padding-bottom: 1.5rem;
+  }
+}
+.account .account-container .account-img img {
+  width: 40%;
+  border-radius: 50%;
+  box-shadow: 0px 0px 13px #8d8d8d;
+  margin-bottom: 1rem;
+}
+/* User Dailog */
+.user-dialog {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 10px #000;
+  z-index: 2000;
+}
+.user-dialog.show {
+  display: flex;
+}
+.user-dialog #close-dialog {
+  font-size: 2rem;
+  color: #fff;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+.user-dialog #close-dialog:hover {
+  color: var(--success);
+  transition: all 0.5s ease;
+}
+.user-dialog .dialog-container {
+  width: 60%;
+  height: 60%;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  animation: zoomIn 0.75s ease-in-out;
+  overflow: auto;
+}
+@media screen and (max-width: 768px) {
+  .user-dialog .dialog-container {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 576px) {
+  .user-dialog .dialog-container {
+    width: 80%;
+  }
+}
+.user-dialog .dialog-container > .row {
+  height: 100%;
+}
+.user-dialog .dialog-container > .row > div {
+  height: 100%;
+}
+.user-dialog .user-dialog-img {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.user-dialog .user-dialog-img img {
+  width: 40%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+.user-dialog .user-dialog-img h4 {
+  text-align: center;
+}
+.user-dialog .user-dialog-details {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.user-dialog .user-dialog-details h4 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.user-dialog .user-dialog-details ul {
+  list-style-type: none;
+  margin-bottom: 1rem;
+}
+.user-dialog .user-dialog-details .btn-view-cv {
+  margin-bottom: 0.75rem;
+}
+
+/*# sourceMappingURL=style.css.map */

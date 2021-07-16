@@ -1,0 +1,444 @@
+// Main Stylesheet
+
+// Variables
+@import "./variables";
+
+a:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+body {
+  margin-top: 88px;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+  padding: 1rem;
+
+  .navbar {
+    border-radius: 5px;
+    background: #adadad !important;
+  }
+
+  .navbar-brand {
+    font-weight: bold;
+    color: darken($primary, 20%) !important;
+  }
+
+  .nav-item {
+    margin: auto .5rem;
+
+    &.active {
+      color: $primary !important;
+    }
+
+    &:hover {
+      color: $primary !important;
+      transition: all .5s ease;
+    }
+
+    @media screen only and (max-width: $breakpoint-sm) {
+
+    }
+  }
+}
+
+/* Welcome Section on home page */
+.welcome {
+
+  > .container-fluid > .row {
+    min-height: calc(100vh - 88px);
+  }
+
+  .welcome-heading {
+    text-align: right;
+
+    > span {
+      color: darken($primary, 20%);
+    }
+  }
+
+  .welcome-paragraph {
+    text-align: right;
+    font-weight: 300;
+  }
+
+  @media screen and (max-width: $breakpoint-md) {
+    > .container-fluid > .row > div:last-of-type {
+      position: absolute;
+    }
+
+    .welcome-img {
+      opacity: .5;
+    }
+
+    .welcome-heading,
+    .welcome-paragraph {
+      text-align: center;
+    }
+  }
+}
+
+/* Signup Dialog */
+.signup-dialog {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7));
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 10px #000;
+  z-index: 2000;
+
+  &.show {
+    display: flex;
+  }
+
+  #close-dialog {
+    font-size: 2rem;
+    color: #fff;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+
+    &:hover {
+      color: $primary;
+      transition: all .5s ease;
+    }
+  }
+
+  @-webkit-keyframes zoomIn {
+    from {
+      opacity: 0;
+      -webkit-transform: scale3d(0.3, 0.3, 0.3);
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    50% {
+      opacity: 1;
+    }
+  }
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      -webkit-transform: scale3d(0.3, 0.3, 0.3);
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    50% {
+      opacity: 1;
+    }
+  }
+
+  .dialog-container {
+    width: 40%;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    animation: zoomIn .75s ease-in-out;
+
+    @media screen and (max-width: $breakpoint-md) {
+      width: 50%;
+    }
+
+    @media screen and (max-width: $breakpoint-sm) {
+      width: 80%;
+    }
+  }
+
+  .signup-form {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    .form-group {
+      margin-bottom: 1rem;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+
+/* Login Dialog */
+.login-dialog {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7));
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 10px #000;
+  z-index: 2000;
+
+  &.show {
+    display: flex;
+  }
+
+  #close-dialog {
+    font-size: 2rem;
+    color: #fff;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+
+    &:hover {
+      color: var(--success);
+      transition: all .5s ease;
+    }
+  }
+
+  .dialog-container {
+    width: 40%;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    animation: zoomIn .75s ease-in-out;
+
+    @media screen and (max-width: $breakpoint-md) {
+      width: 50%;
+    }
+
+    @media screen and (max-width: $breakpoint-sm) {
+      width: 80%;
+    }
+  }
+
+  .login-form {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    .form-group {
+      margin-bottom: 1rem;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+/* Explore Actions Section */
+.actions {
+
+  .actions-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    .filters {
+      width: fit-content;
+      display: inline;
+
+      .profession-filter {
+        background: lighten($primary, 50%);
+        border-radius: .25rem;
+
+        .input-group-prepend {
+          padding-left: .75rem;
+          padding-right: .75rem;
+          align-items: center;
+
+          i {
+            color: darken($primary, 10%);
+          }
+
+        }
+      }
+    }
+  }
+
+
+}
+
+/* Explore Section */
+.explore {
+  .user-container {
+    height: 100%;
+
+    @media screen and (max-width: $breakpoint-sm) {
+      margin-bottom: 2rem;
+    }
+
+    .card {
+      padding: .5rem 0;
+      box-shadow: 0px 0px 5px #d0c7c7;
+    }
+
+    .user-img {
+      border: 5px solid lighten($primary, 50%);
+      border-radius: 50%;
+      width: 50%;
+      height: auto;
+      margin: 1.5rem auto 0;
+    }
+
+    .user-name {
+      display: block;
+      color: #000;
+      text-align: center;
+      font-size: 1.3rem;
+
+      &:hover {
+        color: $primary;
+        transition: all .5s ease;
+      }
+    }
+
+    .user-profession {
+      text-align: center;
+      font-size: .8rem;
+      color: darken($primary, 20%);
+      font-weight: 700;
+    }
+  }
+}
+
+/* Account Page Section */
+.account {
+
+  > .container > .row {
+    min-height: calc(100vh - 88px);
+  }
+
+  .account-container {
+    background: $offwhite;
+    padding: 2rem 1.5rem;
+    border-radius: 10px;
+
+    @media screen and (max-width: $breakpoint-md) {
+      border-radius: 0;
+    }
+
+    .account-img {
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      @media screen and (max-width: $breakpoint-md) {
+        padding-bottom: 1.5rem;
+      }
+
+      img {
+        width: 40%;
+        border-radius: 50%;
+        box-shadow: 0px 0px 13px #8d8d8d;
+        margin-bottom: 1rem;
+      }
+    }
+
+    .account-form {}
+  }
+}
+
+/* User Dailog */
+.user-dialog {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7));
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 10px #000;
+  z-index: 2000;
+
+  &.show {
+    display: flex;
+  }
+
+  #close-dialog {
+    font-size: 2rem;
+    color: #fff;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+
+    &:hover {
+      color: var(--success);
+      transition: all .5s ease;
+    }
+  }
+
+
+  .dialog-container {
+    width: 60%;
+    height: 60%;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    animation: zoomIn .75s ease-in-out;
+    overflow: auto;
+
+    @media screen and (max-width: $breakpoint-md) {
+      width: 50%;
+    }
+
+    @media screen and (max-width: $breakpoint-sm) {
+      width: 80%;
+    }
+
+    > .row {
+      height: 100%;
+
+      > div {
+        height: 100%;
+      }
+    }
+  }
+
+  .user-dialog-img {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 40%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    h4 {
+      text-align: center;
+    }
+  }
+
+  .user-dialog-details {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h4 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    ul {
+      list-style-type: none;
+      margin-bottom: 1rem;
+    }
+
+    .btn-view-cv {
+      margin-bottom: .75rem;
+    }
+
+    .btn-download-cv {}
+  }
+}
